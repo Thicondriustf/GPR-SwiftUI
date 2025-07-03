@@ -10,7 +10,7 @@ import Foundation
 
 /// This extension is responsible for en easy-to-make API calls, creating the URLRequest from the ServiceProtocol and adding body params if needed
 extension URLRequest {
-    init(service: ServiceProtocol) throws {
+    public init(service: ServiceProtocol) throws {
         let urlComponents = try URLComponents(service: service)
         self.init(url: urlComponents.url!)
         httpMethod = service.method.rawValue

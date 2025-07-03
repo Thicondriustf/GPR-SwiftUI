@@ -21,7 +21,7 @@ public protocol ServiceProtocol {
     var headers: HTTPHeaders? { get }
 }
 
-extension ServiceProtocol {
+public extension ServiceProtocol {
     var absolutePath: String {
         guard let baseURL = baseURL else {
             return ""

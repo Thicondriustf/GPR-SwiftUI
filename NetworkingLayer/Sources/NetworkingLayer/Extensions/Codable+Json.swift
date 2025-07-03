@@ -13,7 +13,7 @@ extension Encodable {
         do {
             return try JSONEncoder().encode(self)
         } catch {
-            debug("NetworkingLayer", error, name: "Error")
+            debug(error, name: "Error")
             return nil
         }
     }
@@ -25,7 +25,7 @@ extension Decodable {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             return decode(from: jsonData)
         } catch {
-            debug("NetworkingLayer", error, name: "Error")
+            debug(error, name: "Error")
             return nil
         }
     }
@@ -34,7 +34,7 @@ extension Decodable {
         do {
             return try JSONDecoder().decode(self, from: data)
         } catch {
-            debug("NetworkingLayer", error, name: "Error")
+            debug(error, name: "Error")
             return nil
         }
     }
@@ -45,7 +45,7 @@ extension Data {
         do {
             return try JSONSerialization.jsonObject(with: self, options: .allowFragments)
         } catch {
-            debug("NetworkingLayer", error, name: "Error")
+            debug(error, name: "Error")
             return nil
         }
     }

@@ -5,7 +5,8 @@
 //  Created by Tommy Fernandez on 16/12/2024.
 //
 
-import SwiftUI
+import Foundation
+import NetworkingLayer
 
 protocol RepoPresentationLogic {
     func presentInfos(repository: Repository)

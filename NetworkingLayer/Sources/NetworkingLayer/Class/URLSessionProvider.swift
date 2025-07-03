@@ -16,7 +16,7 @@ public class URLSessionProvider: ProviderProtocol {
         self.session = session
     }
     
-    func request(service: ServiceProtocol) async -> NetworkResponse {
+    public func request(service: ServiceProtocol) async -> NetworkResponse {
         do {
             let request = try URLRequest(service: service)
             let task = try await session.dataTask(request: request)

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import NetworkingLayer
 
 struct HomeConfigurator {
     static func initView() -> HomeView {
+        NetworkingLayer.enableLogs()
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
         let router = HomeRouter()

@@ -10,7 +10,7 @@ import Foundation
 
 /// This extension is responsible for en easy-to-make API calls adding query params if needed
 extension URLComponents {
-    init(service: ServiceProtocol) throws {
+    public init(service: ServiceProtocol) throws {
         guard let url = service.baseURL?.appendingPathComponent(service.path) else {
             throw NetworkError.urlError
         }

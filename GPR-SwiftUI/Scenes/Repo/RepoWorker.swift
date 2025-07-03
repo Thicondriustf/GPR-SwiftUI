@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkingLayer
 
 protocol RepoWorkerProtocol {
     /// Retrieve the repository from API

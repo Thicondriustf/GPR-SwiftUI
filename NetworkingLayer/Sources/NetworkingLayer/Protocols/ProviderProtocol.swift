@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ProviderProtocol {
+public protocol ProviderProtocol {
     func request(service: ServiceProtocol) async -> NetworkResponse
 }

@@ -11,18 +11,9 @@
 		D8587B9A2D0FB005000BCCE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8587B992D0FB005000BCCE2 /* Preview Assets.xcassets */; };
 		D8587BD52D0FB11F000BCCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8587BBD2D0FB11F000BCCE2 /* Assets.xcassets */; };
 		D8587BD62D0FB11F000BCCE2 /* Debugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BBE2D0FB11F000BCCE2 /* Debugger.swift */; };
-		D8587BD72D0FB11F000BCCE2 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC12D0FB11F000BCCE2 /* NetworkResponse.swift */; };
-		D8587BD82D0FB11F000BCCE2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC22D0FB11F000BCCE2 /* HTTPMethod.swift */; };
 		D8587BD92D0FB11F000BCCE2 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC42D0FB11F000BCCE2 /* Issue.swift */; };
 		D8587BDA2D0FB11F000BCCE2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC52D0FB11F000BCCE2 /* Repository.swift */; };
-		D8587BDB2D0FB11F000BCCE2 /* Codable+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC72D0FB11F000BCCE2 /* Codable+Json.swift */; };
-		D8587BDC2D0FB11F000BCCE2 /* URLComponents+ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC82D0FB11F000BCCE2 /* URLComponents+ServiceProtocol.swift */; };
-		D8587BDD2D0FB11F000BCCE2 /* URLRequest+ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BC92D0FB11F000BCCE2 /* URLRequest+ServiceProtocol.swift */; };
 		D8587BDE2D0FB11F000BCCE2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BCB2D0FB11F000BCCE2 /* Request.swift */; };
-		D8587BDF2D0FB11F000BCCE2 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BCD2D0FB11F000BCCE2 /* URLSessionProvider.swift */; };
-		D8587BE02D0FB11F000BCCE2 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BCF2D0FB11F000BCCE2 /* ServiceProtocol.swift */; };
-		D8587BE12D0FB11F000BCCE2 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BD02D0FB11F000BCCE2 /* URLSessionProtocol.swift */; };
-		D8587BE22D0FB11F000BCCE2 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BD12D0FB11F000BCCE2 /* ProviderProtocol.swift */; };
 		D8587BE42D0FB11F000BCCE2 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BD42D0FB11F000BCCE2 /* Date+Extensions.swift */; };
 		D8587BF02D0FB213000BCCE2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BEF2D0FB213000BCCE2 /* HomeView.swift */; };
 		D8587BF22D0FB261000BCCE2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BF12D0FB260000BCCE2 /* HomeViewModel.swift */; };
@@ -51,6 +42,7 @@
 		D87C06592D1082B9000E994B /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06582D1082B9000E994B /* IssueRow.swift */; };
 		D87C065C2D10841B000E994B /* RepoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C065A2D10841B000E994B /* RepoInteractorTests.swift */; };
 		D87C065D2D10841B000E994B /* IssuesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */; };
+		D8EBE1F62E16B88300CDAA27 /* NetworkingLayer in Frameworks */ = {isa = PBXBuildFile; productRef = D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,18 +62,9 @@
 		D8587B9F2D0FB006000BCCE2 /* GPR-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPR-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8587BBD2D0FB11F000BCCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8587BBE2D0FB11F000BCCE2 /* Debugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugger.swift; sourceTree = "<group>"; };
-		D8587BC12D0FB11F000BCCE2 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
-		D8587BC22D0FB11F000BCCE2 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D8587BC42D0FB11F000BCCE2 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		D8587BC52D0FB11F000BCCE2 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		D8587BC72D0FB11F000BCCE2 /* Codable+Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Json.swift"; sourceTree = "<group>"; };
-		D8587BC82D0FB11F000BCCE2 /* URLComponents+ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLComponents+ServiceProtocol.swift"; sourceTree = "<group>"; };
-		D8587BC92D0FB11F000BCCE2 /* URLRequest+ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+ServiceProtocol.swift"; sourceTree = "<group>"; };
 		D8587BCB2D0FB11F000BCCE2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		D8587BCD2D0FB11F000BCCE2 /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
-		D8587BCF2D0FB11F000BCCE2 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
-		D8587BD02D0FB11F000BCCE2 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
-		D8587BD12D0FB11F000BCCE2 /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
 		D8587BD42D0FB11F000BCCE2 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D8587BEF2D0FB213000BCCE2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D8587BF12D0FB260000BCCE2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -112,6 +95,7 @@
 		D87C065A2D10841B000E994B /* RepoInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoInteractorTests.swift; sourceTree = "<group>"; };
 		D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesInteractorTests.swift; sourceTree = "<group>"; };
 		D87C065E2D10A18C000E994B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D8EBE1F32E16B86700CDAA27 /* NetworkingLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkingLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8EBE1F62E16B88300CDAA27 /* NetworkingLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,10 +120,12 @@
 		D8587B862D0FAFFF000BCCE2 = {
 			isa = PBXGroup;
 			children = (
+				D8EBE1F22E16B86700CDAA27 /* Packages */,
 				D87C065E2D10A18C000E994B /* README.md */,
 				D8587B912D0FAFFF000BCCE2 /* GPR-SwiftUI */,
 				D8587BA22D0FB006000BCCE2 /* GPR-SwiftUITests */,
 				D8587B902D0FAFFF000BCCE2 /* Products */,
+				D8EBE1F42E16B88300CDAA27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,23 +184,10 @@
 		D8587BBF2D0FB11F000BCCE2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D8587BC02D0FB11F000BCCE2 /* Enum */,
 				D8587BC32D0FB11F000BCCE2 /* Models */,
-				D8587BC62D0FB11F000BCCE2 /* Extensions */,
 				D8587BCA2D0FB11F000BCCE2 /* Requests */,
-				D8587BCC2D0FB11F000BCCE2 /* Class */,
-				D8587BCE2D0FB11F000BCCE2 /* Protocols */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		D8587BC02D0FB11F000BCCE2 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				D8587BC12D0FB11F000BCCE2 /* NetworkResponse.swift */,
-				D8587BC22D0FB11F000BCCE2 /* HTTPMethod.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		D8587BC32D0FB11F000BCCE2 /* Models */ = {
@@ -225,40 +199,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D8587BC62D0FB11F000BCCE2 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D8587BC72D0FB11F000BCCE2 /* Codable+Json.swift */,
-				D8587BC82D0FB11F000BCCE2 /* URLComponents+ServiceProtocol.swift */,
-				D8587BC92D0FB11F000BCCE2 /* URLRequest+ServiceProtocol.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		D8587BCA2D0FB11F000BCCE2 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				D8587BCB2D0FB11F000BCCE2 /* Request.swift */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		D8587BCC2D0FB11F000BCCE2 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				D8587BCD2D0FB11F000BCCE2 /* URLSessionProvider.swift */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		D8587BCE2D0FB11F000BCCE2 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				D8587BCF2D0FB11F000BCCE2 /* ServiceProtocol.swift */,
-				D8587BD02D0FB11F000BCCE2 /* URLSessionProtocol.swift */,
-				D8587BD12D0FB11F000BCCE2 /* ProviderProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D8587BD22D0FB11F000BCCE2 /* Extensions */ = {
@@ -338,6 +284,21 @@
 			path = Issues;
 			sourceTree = "<group>";
 		};
+		D8EBE1F22E16B86700CDAA27 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D8EBE1F32E16B86700CDAA27 /* NetworkingLayer */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		D8EBE1F42E16B88300CDAA27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,6 +315,9 @@
 			dependencies = (
 			);
 			name = "GPR-SwiftUI";
+			packageProductDependencies = (
+				D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */,
+			);
 			productName = "GPR-SwiftUI";
 			productReference = D8587B8F2D0FAFFF000BCCE2 /* GPR-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -441,7 +405,6 @@
 				D87C06512D107FEF000E994B /* IssuesInteractor.swift in Sources */,
 				D87C064E2D107FEF000E994B /* IssuesPresenter.swift in Sources */,
 				D8587BF82D0FB32C000BCCE2 /* HomePresenter.swift in Sources */,
-				D8587BE12D0FB11F000BCCE2 /* URLSessionProtocol.swift in Sources */,
 				D87C06422D106480000E994B /* RepoPresenter.swift in Sources */,
 				D87C062F2D1048EE000E994B /* RepositoryRow.swift in Sources */,
 				D87C06442D1064D9000E994B /* RepoView.swift in Sources */,
@@ -450,28 +413,20 @@
 				D8587BDA2D0FB11F000BCCE2 /* Repository.swift in Sources */,
 				D8587BF42D0FB2DF000BCCE2 /* HomeInteractor.swift in Sources */,
 				D8587BD62D0FB11F000BCCE2 /* Debugger.swift in Sources */,
-				D8587BDC2D0FB11F000BCCE2 /* URLComponents+ServiceProtocol.swift in Sources */,
 				D8587BFE2D0FBDCD000BCCE2 /* HomeConfigurator.swift in Sources */,
 				D87C06592D1082B9000E994B /* IssueRow.swift in Sources */,
-				D8587BD72D0FB11F000BCCE2 /* NetworkResponse.swift in Sources */,
 				D8587BF02D0FB213000BCCE2 /* HomeView.swift in Sources */,
 				D87C06572D108014000E994B /* IssuesConfigurator.swift in Sources */,
 				D8587BDE2D0FB11F000BCCE2 /* Request.swift in Sources */,
-				D8587BDD2D0FB11F000BCCE2 /* URLRequest+ServiceProtocol.swift in Sources */,
 				D8587BE42D0FB11F000BCCE2 /* Date+Extensions.swift in Sources */,
 				D87C06332D105AC4000E994B /* HomeRouter.swift in Sources */,
-				D8587BE02D0FB11F000BCCE2 /* ServiceProtocol.swift in Sources */,
-				D8587BDB2D0FB11F000BCCE2 /* Codable+Json.swift in Sources */,
 				D87C06312D105A27000E994B /* AppNavigator.swift in Sources */,
 				D87C063F2D106480000E994B /* RepoWorker.swift in Sources */,
 				D87C06552D108008000E994B /* IssuesView.swift in Sources */,
 				D8587BFB2D0FB9A2000BCCE2 /* DateWrapper.swift in Sources */,
-				D8587BD82D0FB11F000BCCE2 /* HTTPMethod.swift in Sources */,
 				D87C06402D106480000E994B /* RepoRouter.swift in Sources */,
 				D87C06412D106480000E994B /* RepoInteractor.swift in Sources */,
-				D8587BE22D0FB11F000BCCE2 /* ProviderProtocol.swift in Sources */,
 				D87C06482D10698C000E994B /* RepoConfigurator.swift in Sources */,
-				D8587BDF2D0FB11F000BCCE2 /* URLSessionProvider.swift in Sources */,
 				D8587B932D0FAFFF000BCCE2 /* GPR_SwiftUIApp.swift in Sources */,
 				D87C06462D1064E4000E994B /* RepoViewModel.swift in Sources */,
 				D8587BF62D0FB30F000BCCE2 /* HomeWorker.swift in Sources */,
@@ -740,6 +695,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8587B872D0FAFFF000BCCE2 /* Project object */;
 }

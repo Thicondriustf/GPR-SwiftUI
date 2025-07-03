@@ -5,6 +5,8 @@
 //  Created by Tommy Fernandez on 16/12/2024.
 //
 
+import NetworkingLayer
+
 protocol HomeWorkerProtocol {
     /// Retrieve all public repositories from API
     /// - Parameters:

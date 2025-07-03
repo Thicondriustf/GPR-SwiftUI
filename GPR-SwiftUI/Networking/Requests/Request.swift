@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetworkingLayer
 
 /// Enum of all API requests used in the app
 enum Request: ServiceProtocol {
