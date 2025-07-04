@@ -23,7 +23,7 @@ struct IssuesView: View {
         }
             .onAppear(perform: interactor?.retrieveIssues)
             .listStyle(.plain)
-            .navigationTitle("Issues " + (router?.dataStore?.week ?? ""))
+            .navigationTitle("Issues week " + (router?.dataStore?.week ?? ""))
             .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -26,7 +26,7 @@ final class RepoRouter: RepoRoutingLogic, RepoDataPassing {
         }
         
         var view = IssuesConfigurator.initView()
-        view.router?.dataStore?.week = weekIssue.0.toString(format: "MM/yyyy")
+        view.router?.dataStore?.week = weekIssue.0.toString(format: "MM/dd")
         view.router?.dataStore?.issues = weekIssue.1
         return view
     }
