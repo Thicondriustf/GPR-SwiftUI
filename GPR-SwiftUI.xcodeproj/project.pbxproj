@@ -127,6 +127,166 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D808DCF02E1838AA00E33EF0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D8587BF32D0FB2DF000BCCE2 /* HomeInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D808DCF12E1838AF00E33EF0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D8587BF72D0FB32C000BCCE2 /* HomePresenter.swift */,
+				D8587BEF2D0FB213000BCCE2 /* HomeView.swift */,
+				D8587BF12D0FB260000BCCE2 /* HomeViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D808DCF22E1838C000E33EF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8587BF52D0FB30E000BCCE2 /* HomeWorker.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D808DCF32E18390000E33EF0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D8587BFD2D0FBDCD000BCCE2 /* HomeConfigurator.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D808DCF42E18390500E33EF0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D87C06322D105AC4000E994B /* HomeRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		D808DCF52E18391900E33EF0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D87C06562D108014000E994B /* IssuesConfigurator.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D808DCF62E18391E00E33EF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D808DCF72E18392200E33EF0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D87C064D2D107FEF000E994B /* IssuesInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D808DCF82E18392900E33EF0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D87C064C2D107FEF000E994B /* IssuesRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		D808DCF92E18393400E33EF0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D87C064A2D107FEF000E994B /* IssuesPresenter.swift */,
+				D87C06542D108008000E994B /* IssuesView.swift */,
+				D87C06522D107FFF000E994B /* IssuesViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D808DCFA2E18394B00E33EF0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D87C063B2D10647F000E994B /* RepoPresenter.swift */,
+				D87C06432D1064D9000E994B /* RepoView.swift */,
+				D87C06452D1064E4000E994B /* RepoViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D808DCFB2E18395500E33EF0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D87C06392D10647F000E994B /* RepoRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		D808DCFC2E18395F00E33EF0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D87C063A2D10647F000E994B /* RepoInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D808DCFD2E18396700E33EF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D87C06382D10647F000E994B /* RepoWorker.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D808DCFE2E18396B00E33EF0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D87C06472D10698C000E994B /* RepoConfigurator.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D808DCFF2E183A1700E33EF0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D808DD022E183A4200E33EF0 /* Interactors */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D808DD002E183A2600E33EF0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D808DD012E183A3A00E33EF0 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D808DD012E183A3A00E33EF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D808DCEC2E1830C900E33EF0 /* HomeViewTests.swift */,
+				D808DCEE2E1831C000E33EF0 /* RepoViewTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D808DD022E183A4200E33EF0 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				D8587BFF2D0FBF0D000BCCE2 /* HomeInteractorTests.swift */,
+				D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */,
+				D87C065A2D10841B000E994B /* RepoInteractorTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
 		D8587B862D0FAFFF000BCCE2 = {
 			isa = PBXGroup;
 			children = (
@@ -175,11 +335,8 @@
 		D8587BA22D0FB006000BCCE2 /* GPR-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D8587BFF2D0FBF0D000BCCE2 /* HomeInteractorTests.swift */,
-				D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */,
-				D87C065A2D10841B000E994B /* RepoInteractorTests.swift */,
-				D808DCEC2E1830C900E33EF0 /* HomeViewTests.swift */,
-				D808DCEE2E1831C000E33EF0 /* RepoViewTests.swift */,
+				D808DCFF2E183A1700E33EF0 /* Domain */,
+				D808DD002E183A2600E33EF0 /* Presentation */,
 			);
 			path = "GPR-SwiftUITests";
 			sourceTree = "<group>";
@@ -242,13 +399,11 @@
 		D8587BE62D0FB199000BCCE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D8587BFD2D0FBDCD000BCCE2 /* HomeConfigurator.swift */,
-				D8587BF32D0FB2DF000BCCE2 /* HomeInteractor.swift */,
-				D8587BF72D0FB32C000BCCE2 /* HomePresenter.swift */,
-				D87C06322D105AC4000E994B /* HomeRouter.swift */,
-				D8587BEF2D0FB213000BCCE2 /* HomeView.swift */,
-				D8587BF12D0FB260000BCCE2 /* HomeViewModel.swift */,
-				D8587BF52D0FB30E000BCCE2 /* HomeWorker.swift */,
+				D808DCF32E18390000E33EF0 /* Builder */,
+				D808DCF22E1838C000E33EF0 /* Data */,
+				D808DCF02E1838AA00E33EF0 /* Domain */,
+				D808DCF42E18390500E33EF0 /* Navigation */,
+				D808DCF12E1838AF00E33EF0 /* Presentation */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -274,13 +429,11 @@
 		D87C06342D10647F000E994B /* Repo */ = {
 			isa = PBXGroup;
 			children = (
-				D87C06472D10698C000E994B /* RepoConfigurator.swift */,
-				D87C063A2D10647F000E994B /* RepoInteractor.swift */,
-				D87C063B2D10647F000E994B /* RepoPresenter.swift */,
-				D87C06392D10647F000E994B /* RepoRouter.swift */,
-				D87C06432D1064D9000E994B /* RepoView.swift */,
-				D87C06452D1064E4000E994B /* RepoViewModel.swift */,
-				D87C06382D10647F000E994B /* RepoWorker.swift */,
+				D808DCFE2E18396B00E33EF0 /* Builder */,
+				D808DCFD2E18396700E33EF0 /* Data */,
+				D808DCFC2E18395F00E33EF0 /* Domain */,
+				D808DCFB2E18395500E33EF0 /* Navigation */,
+				D808DCFA2E18394B00E33EF0 /* Presentation */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -288,12 +441,11 @@
 		D87C06492D107FC5000E994B /* Issues */ = {
 			isa = PBXGroup;
 			children = (
-				D87C06562D108014000E994B /* IssuesConfigurator.swift */,
-				D87C064D2D107FEF000E994B /* IssuesInteractor.swift */,
-				D87C064A2D107FEF000E994B /* IssuesPresenter.swift */,
-				D87C064C2D107FEF000E994B /* IssuesRouter.swift */,
-				D87C06542D108008000E994B /* IssuesView.swift */,
-				D87C06522D107FFF000E994B /* IssuesViewModel.swift */,
+				D808DCF52E18391900E33EF0 /* Builder */,
+				D808DCF62E18391E00E33EF0 /* Data */,
+				D808DCF72E18392200E33EF0 /* Domain */,
+				D808DCF82E18392900E33EF0 /* Navigation */,
+				D808DCF92E18393400E33EF0 /* Presentation */,
 			);
 			path = Issues;
 			sourceTree = "<group>";
