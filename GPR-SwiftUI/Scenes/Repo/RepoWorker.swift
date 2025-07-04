@@ -22,7 +22,7 @@ protocol RepoWorkerProtocol {
     func getIssues(name: String, from startDate: Date, page: Int) async -> NetworkResponse
 }
 
-final class RepoWorker {
+final class RepoWorker: RepoWorkerProtocol {
     func getRepository(name: String) async -> NetworkResponse {
         return await URLSessionProvider().request(service: Request.getRepository(repoFullName: name))
     }

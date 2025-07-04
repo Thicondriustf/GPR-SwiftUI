@@ -11,40 +11,28 @@ import XCTest
 final class IssuesInteractorTests: XCTestCase {
     final class IssuesInteractorSpy: IssuesPresentationLogic {
         var presentIssuesCalled = false
-        
+        var presentedIssues: [Issue] = []
+
         func presentIssues(_ issues: [Issue]) {
             presentIssuesCalled = true
+            presentedIssues = issues
         }
     }
     
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testIssuesInteractorRetrieveIssuesEmpty() throws {
-        let issuesInteractor = IssuesInteractor()
-        let issuesInteractorSpy = IssuesInteractorSpy()
-        issuesInteractor.presenter = issuesInteractorSpy
+    func test_retrieveIssues_shouldCallPresenterWithIssues() {
+        let presenter = IssuesInteractorSpy()
+        let interactor = IssuesInteractor()
+        interactor.presenter = presenter
+        let mockIssues = [
+            Issue(createdAt: Date(), title: "Issue 1", state: .open),
+            Issue(createdAt: Date(), title: "Issue 2", state: .open)
+        ]
+        interactor.issues = mockIssues
         
-        issuesInteractor.retrieveIssues()
+        interactor.retrieveIssues()
         
-        XCTAssert(issuesInteractorSpy.presentIssuesCalled)
-    }
-    
-    func testIssuesInteractorRetrieveIssuesNonEmpty() throws {
-        let issuesInteractor = IssuesInteractor()
-        issuesInteractor.issues = [Issue(createdAt: Date(), title: "Title", state: .open)]
-        let issuesInteractorSpy = IssuesInteractorSpy()
-        issuesInteractor.presenter = issuesInteractorSpy
-        
-        issuesInteractor.retrieveIssues()
-        
-        XCTAssert(issuesInteractorSpy.presentIssuesCalled)
+        XCTAssertTrue(presenter.presentIssuesCalled)
+        XCTAssertEqual(presenter.presentedIssues.count, mockIssues.count)
+        XCTAssertEqual(presenter.presentedIssues.map(\.title), mockIssues.map(\.title))
     }
 }

@@ -18,6 +18,11 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var repositories: [Repository] = []
     
     private var isLoading: Bool = false
+    private let worker: HomeWorkerProtocol
+    
+    init(worker: HomeWorkerProtocol = HomeWorker()) {
+        self.worker = worker
+    }
 
     func getNextPage() {
         Task { @MainActor in
@@ -31,7 +36,7 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
                 id = repoId
             }
             
-            let response = await HomeWorker().getRepositories(from: id)
+            let response = await worker.getRepositories(from: id)
             switch response {
             case .success(let data):
                 guard let result = [Repository].decode(from: data) else {

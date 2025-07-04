@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import NetworkingLayer
 @testable import GPR_SwiftUI
 
 final class RepoInteractorTests: XCTestCase {
@@ -16,16 +17,20 @@ final class RepoInteractorTests: XCTestCase {
         }
         
         var presentInfosCalled = false
+        var presentedRepository: Repository?
         
         func presentInfos(repository: Repository) {
             presentInfosCalled = true
+            presentedRepository = repository
             expectation.fulfill()
         }
         
         var presentIssuesCalled = false
+        var presentedIssues: [(Date, [Issue])]?
         
         func presentIssues(_ issues: [(Date, [Issue])]) {
             presentIssuesCalled = true
+            presentedIssues = issues
             expectation.fulfill()
         }
         
@@ -37,56 +42,90 @@ final class RepoInteractorTests: XCTestCase {
         }
     }
     
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    final class RepoWorkerMock: RepoWorkerProtocol {
+        private let repoResponse: NetworkResponse?
+        private let issuesResponses: [NetworkResponse]
+
+        init(repoResponse: NetworkResponse?, issuesResponses: [NetworkResponse]) {
+            self.repoResponse = repoResponse
+            self.issuesResponses = issuesResponses
+        }
+
+        func getRepository(name: String) async -> NetworkResponse {
+            return repoResponse ?? .failure(.unknown)
+        }
+
+        var callCount = 0
+
+        func getIssues(name: String, from startDate: Date, page: Int) async -> NetworkResponse {
+            guard callCount < issuesResponses.count else {
+                return .success([Issue]().data!)
+            }
+
+            defer {
+                callCount += 1
+            }
+            return issuesResponses[callCount]
+        }
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
+    func test_getRepoInfos_success_shouldPresentRepository() {
+        let expectation = expectation(description: "Retrieve repository from API")
+        let presenter = RepoInteractorSpy(expectation: expectation)
+
+        let repository = Repository(id: 1, name: "Test Repo", fullName: "Test/Repo", description: nil, openIssuesCount: nil, forksCount: nil, watchersCount: nil)
+        let data = repository.data!
+        let worker = RepoWorkerMock(repoResponse: .success(data), issuesResponses: [])
+
+        let interactor = RepoInteractor(worker: worker)
+        interactor.fullName = "Test/Repo"
+        interactor.presenter = presenter
+
+        interactor.getRepoInfos()
+        
+        waitForExpectations(timeout: 5)
+        
+        XCTAssertTrue(presenter.presentInfosCalled)
+        XCTAssertEqual(presenter.presentedRepository?.id, 1)
     }
 
-    func testRepoInteractorGetRepoInfos() throws {
-        // Create expectaction for async testing due to API call
+    func test_getRepoInfos_failure_shouldPresentError() {
         let expectation = expectation(description: "Retrieve repositories from API")
-        let repoInteractor = RepoInteractor()
-        repoInteractor.fullName = "github/codeql"
-        let repoInteractorSpy = RepoInteractorSpy(expectation: expectation)
-        repoInteractor.presenter = repoInteractorSpy
+        let presenter = RepoInteractorSpy(expectation: expectation)
         
-        repoInteractor.getRepoInfos()
-        waitForExpectations(timeout: 60)
+        let worker = RepoWorkerMock(repoResponse: .failure(.networkMissing), issuesResponses: [])
+        let interactor = RepoInteractor(worker: worker)
+        interactor.presenter = presenter
+
+        interactor.getRepoInfos()
+        waitForExpectations(timeout: 5)
         
-        XCTAssert(repoInteractorSpy.presentInfosCalled && !repoInteractorSpy.presentErrorCalled
-                  || !repoInteractorSpy.presentInfosCalled && repoInteractorSpy.presentErrorCalled)
+        XCTAssertTrue(presenter.presentErrorCalled)
     }
     
-    func testRepoInteractorGetIssues() throws {
-        // Create expectaction for async testing due to API call
-        let expectation = expectation(description: "Retrieve repositories from API")
-        let repoInteractor = RepoInteractor()
-        repoInteractor.fullName = "github/codeql"
-        let repoInteractorSpy = RepoInteractorSpy(expectation: expectation)
-        repoInteractor.presenter = repoInteractorSpy
+    func test_getIssues_multiplePages_shouldGroupByWeek() {
+        let expectation = expectation(description: "Presenter should be called")
+        let presenter = RepoInteractorSpy(expectation: expectation)
+        let startDate = Calendar.current.date(byAdding: .day, value: -14, to: Date())!
+
+        let issuePage1 = Issue(createdAt: startDate.addingTimeInterval(3600), title: "Issue 1", state: .open)
+        let issuePage2 = Issue(createdAt: startDate.addingTimeInterval(8 * 24 * 3600), title: "Issue 2", state: .open)
+        let data1 = [issuePage1].data!
+        let data2 = [issuePage2].data!
         
-        repoInteractor.getIssues(startDate: Date().addingTimeInterval(-7 * 4 * 24 * 3600))
-        waitForExpectations(timeout: 60)
-        
-        XCTAssert(repoInteractorSpy.presentIssuesCalled && !repoInteractorSpy.presentErrorCalled
-                  || !repoInteractorSpy.presentIssuesCalled && repoInteractorSpy.presentErrorCalled)
-    }
-    
-    func testRepoInteractorWithoutFullName() throws {
-        // Create expectaction for async testing due to API call
-        let expectation = expectation(description: "Retrieve repositories from API")
-        let repoInteractor = RepoInteractor()
-        let repoInteractorSpy = RepoInteractorSpy(expectation: expectation)
-        repoInteractor.presenter = repoInteractorSpy
-        
-        repoInteractor.getIssues(startDate: Date().addingTimeInterval(-7 * 4 * 24 * 3600))
-        waitForExpectations(timeout: 60)
-        
-        XCTAssert(repoInteractorSpy.presentErrorCalled)
+        let worker = RepoWorkerMock(repoResponse: nil, issuesResponses: [.success(data1), .success(data2)])
+
+        let interactor = RepoInteractor(worker: worker)
+        interactor.fullName = "Test/Repo"
+        interactor.presenter = presenter
+
+        interactor.getIssues(startDate: startDate)
+
+        waitForExpectations(timeout: 5)
+
+        XCTAssertTrue(presenter.presentIssuesCalled)
+        XCTAssertEqual(presenter.presentedIssues?.count, 3)
+        XCTAssertEqual(presenter.presentedIssues?.flatMap(\.1).count, 2)
     }
 }

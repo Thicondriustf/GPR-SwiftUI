@@ -25,9 +25,15 @@ final class RepoInteractor: RepoBusinessLogic, RepoDataStore {
     var issues = [Issue]()
     var weekIssues = [(Date, [Issue])]()
     
+    private let worker: RepoWorkerProtocol
+    
+    init(worker: RepoWorkerProtocol = RepoWorker()) {
+        self.worker = worker
+    }
+    
     func getRepoInfos() {
         Task { @MainActor in
-            let response = await RepoWorker().getRepository(name: fullName)
+            let response = await worker.getRepository(name: fullName)
             switch response {
             case .success(let data):
                 guard let result = Repository.decode(from: data) else {
@@ -50,7 +56,7 @@ final class RepoInteractor: RepoBusinessLogic, RepoDataStore {
     
     private func getIssues(startDate: Date, page: Int) {
         Task { @MainActor in
-            let response = await RepoWorker().getIssues(name: fullName, from: startDate, page: page)
+            let response = await worker.getIssues(name: fullName, from: startDate, page: page)
             switch response {
             case .success(let data):
                 guard let result = [Issue].decode(from: data) else {
