@@ -13,31 +13,33 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
 
     var body: some View {
-        ZStack {
-            List {
-                ForEach(viewModel.repositories) { repository in
-                    RepositoryRow(title: repository.title, description: repository.description)
+        NavigationStack {
+            ZStack {
+                List {
+                    ForEach(viewModel.repositories) { repository in
+                        RepositoryRow(title: repository.title, description: repository.description)
+                            .listRowInsets(.none)
+                            .listRowSeparator(.hidden)
+                            .overlay {
+                                NavigationLink("", destination: router?.routeToRepository(repository.id))
+                                    .opacity(0)
+                            }
+                    }
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .frame(maxWidth: .infinity)
                         .listRowInsets(.none)
                         .listRowSeparator(.hidden)
-                        .overlay {
-                            NavigationLink("", destination: router?.routeToRepository(repository.id))
-                                .opacity(0)
-                        }
+                        .onAppear(perform: interactor?.getNextPage)
                 }
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .frame(maxWidth: .infinity)
-                    .listRowInsets(.none)
-                    .listRowSeparator(.hidden)
-                    .onAppear(perform: interactor?.getNextPage)
             }
-        }
             .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert, actions: {
                 Button("OK", role: .cancel, action: {})
             })
             .listStyle(.plain)
             .navigationTitle("GitHub Public Repositories")
             .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

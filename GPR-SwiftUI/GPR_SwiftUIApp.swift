@@ -9,14 +9,24 @@ import SwiftUI
 
 @main
 struct GPR_SwiftUIApp: App {
-    @ObservedObject var navigator = AppNavigator()
-    
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $navigator.navPath) {
+            TabView {
                 HomeConfigurator.initView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                NavigationStack {
+                    RepoConfigurator.initView(name: "realm-swift", fullname: "realm/realm-swift")
+                }
+                    .tabItem {
+                        Label("Other", systemImage: "list.dash")
+                    }
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
-            .environmentObject(navigator)
         }
     }
 }

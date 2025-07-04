@@ -24,7 +24,6 @@
 		D8587BFE2D0FBDCD000BCCE2 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BFD2D0FBDCD000BCCE2 /* HomeConfigurator.swift */; };
 		D8587C002D0FBF0D000BCCE2 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587BFF2D0FBF0D000BCCE2 /* HomeInteractorTests.swift */; };
 		D87C062F2D1048EE000E994B /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C062E2D1048EE000E994B /* RepositoryRow.swift */; };
-		D87C06312D105A27000E994B /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06302D105A27000E994B /* AppNavigator.swift */; };
 		D87C06332D105AC4000E994B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06322D105AC4000E994B /* HomeRouter.swift */; };
 		D87C063F2D106480000E994B /* RepoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06382D10647F000E994B /* RepoWorker.swift */; };
 		D87C06402D106480000E994B /* RepoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06392D10647F000E994B /* RepoRouter.swift */; };
@@ -42,6 +41,9 @@
 		D87C06592D1082B9000E994B /* IssueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C06582D1082B9000E994B /* IssueRow.swift */; };
 		D87C065C2D10841B000E994B /* RepoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C065A2D10841B000E994B /* RepoInteractorTests.swift */; };
 		D87C065D2D10841B000E994B /* IssuesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */; };
+		D8E00C102E18047B0004B6D7 /* FakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C0F2E18047B0004B6D7 /* FakeView.swift */; };
+		D8E00C122E1805570004B6D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C112E1805570004B6D7 /* SettingsView.swift */; };
+		D8E00C142E1805740004B6D7 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C132E1805740004B6D7 /* SettingsRow.swift */; };
 		D8EBE1F62E16B88300CDAA27 /* NetworkingLayer in Frameworks */ = {isa = PBXBuildFile; productRef = D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +78,6 @@
 		D8587BFD2D0FBDCD000BCCE2 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		D8587BFF2D0FBF0D000BCCE2 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		D87C062E2D1048EE000E994B /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
-		D87C06302D105A27000E994B /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		D87C06322D105AC4000E994B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		D87C06382D10647F000E994B /* RepoWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoWorker.swift; sourceTree = "<group>"; };
 		D87C06392D10647F000E994B /* RepoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoRouter.swift; sourceTree = "<group>"; };
@@ -95,6 +96,9 @@
 		D87C065A2D10841B000E994B /* RepoInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoInteractorTests.swift; sourceTree = "<group>"; };
 		D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesInteractorTests.swift; sourceTree = "<group>"; };
 		D87C065E2D10A18C000E994B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D8E00C0F2E18047B0004B6D7 /* FakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeView.swift; sourceTree = "<group>"; };
+		D8E00C112E1805570004B6D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D8E00C132E1805740004B6D7 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		D8EBE1F32E16B86700CDAA27 /* NetworkingLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkingLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,7 +222,8 @@
 		D8587BE52D0FB194000BCCE2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D87C06302D105A27000E994B /* AppNavigator.swift */,
+				D8E00C0E2E1804650004B6D7 /* Settings */,
+				D8E00C0D2E1804520004B6D7 /* Fake */,
 				D8587BE62D0FB199000BCCE2 /* Home */,
 				D87C06492D107FC5000E994B /* Issues */,
 				D87C06342D10647F000E994B /* Repo */,
@@ -253,6 +258,7 @@
 			children = (
 				D87C06582D1082B9000E994B /* IssueRow.swift */,
 				D87C062E2D1048EE000E994B /* RepositoryRow.swift */,
+				D8E00C132E1805740004B6D7 /* SettingsRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +288,22 @@
 				D87C06522D107FFF000E994B /* IssuesViewModel.swift */,
 			);
 			path = Issues;
+			sourceTree = "<group>";
+		};
+		D8E00C0D2E1804520004B6D7 /* Fake */ = {
+			isa = PBXGroup;
+			children = (
+				D8E00C0F2E18047B0004B6D7 /* FakeView.swift */,
+			);
+			path = Fake;
+			sourceTree = "<group>";
+		};
+		D8E00C0E2E1804650004B6D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D8E00C112E1805570004B6D7 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D8EBE1F22E16B86700CDAA27 /* Packages */ = {
@@ -406,9 +428,11 @@
 				D87C064E2D107FEF000E994B /* IssuesPresenter.swift in Sources */,
 				D8587BF82D0FB32C000BCCE2 /* HomePresenter.swift in Sources */,
 				D87C06422D106480000E994B /* RepoPresenter.swift in Sources */,
+				D8E00C102E18047B0004B6D7 /* FakeView.swift in Sources */,
 				D87C062F2D1048EE000E994B /* RepositoryRow.swift in Sources */,
 				D87C06442D1064D9000E994B /* RepoView.swift in Sources */,
 				D8587BF22D0FB261000BCCE2 /* HomeViewModel.swift in Sources */,
+				D8E00C142E1805740004B6D7 /* SettingsRow.swift in Sources */,
 				D87C06532D107FFF000E994B /* IssuesViewModel.swift in Sources */,
 				D8587BDA2D0FB11F000BCCE2 /* Repository.swift in Sources */,
 				D8587BF42D0FB2DF000BCCE2 /* HomeInteractor.swift in Sources */,
@@ -420,12 +444,12 @@
 				D8587BDE2D0FB11F000BCCE2 /* Request.swift in Sources */,
 				D8587BE42D0FB11F000BCCE2 /* Date+Extensions.swift in Sources */,
 				D87C06332D105AC4000E994B /* HomeRouter.swift in Sources */,
-				D87C06312D105A27000E994B /* AppNavigator.swift in Sources */,
 				D87C063F2D106480000E994B /* RepoWorker.swift in Sources */,
 				D87C06552D108008000E994B /* IssuesView.swift in Sources */,
 				D8587BFB2D0FB9A2000BCCE2 /* DateWrapper.swift in Sources */,
 				D87C06402D106480000E994B /* RepoRouter.swift in Sources */,
 				D87C06412D106480000E994B /* RepoInteractor.swift in Sources */,
+				D8E00C122E1805570004B6D7 /* SettingsView.swift in Sources */,
 				D87C06482D10698C000E994B /* RepoConfigurator.swift in Sources */,
 				D8587B932D0FAFFF000BCCE2 /* GPR_SwiftUIApp.swift in Sources */,
 				D87C06462D1064E4000E994B /* RepoViewModel.swift in Sources */,

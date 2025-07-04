@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RepoConfigurator {
-    static func initView() -> RepoView {
+    static func initView(name: String, fullname: String) -> RepoView {
         let interactor = RepoInteractor()
+        interactor.name = name
+        interactor.fullName = fullname
         let presenter = RepoPresenter()
         let router = RepoRouter()
         router.dataStore = interactor

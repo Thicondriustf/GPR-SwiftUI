@@ -25,9 +25,6 @@ final class HomeRouter: HomeRoutingLogic, HomeDataPassing {
             return nil
         }
         
-        var view = RepoConfigurator.initView()
-        view.router?.dataStore?.name = repository.name
-        view.router?.dataStore?.fullName = repository.fullName
-        return view
+        return RepoConfigurator.initView(name: repository.name, fullname: repository.fullName)
     }
 }
