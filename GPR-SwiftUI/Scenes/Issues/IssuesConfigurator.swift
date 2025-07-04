@@ -13,11 +13,12 @@ struct IssuesConfigurator {
         let presenter = IssuesPresenter()
         let router = IssuesRouter()
         router.dataStore = interactor
-        var view = IssuesView()
+        let viewModel = IssuesViewModel()
+        var view = IssuesView(viewModel: viewModel)
         view.interactor = interactor
         view.router = router
         interactor.presenter = presenter
-        presenter.viewModel = view.viewModel
+        presenter.viewModel = viewModel
         return view
     }
 }

@@ -15,11 +15,12 @@ struct RepoConfigurator {
         let presenter = RepoPresenter()
         let router = RepoRouter()
         router.dataStore = interactor
-        var view = RepoView()
+        let viewModel = RepoViewModel()
+        var view = RepoView(viewModel: viewModel)
         view.interactor = interactor
         view.router = router
         interactor.presenter = presenter
-        presenter.viewModel = view.viewModel
+        presenter.viewModel = viewModel
         return view
     }
 }

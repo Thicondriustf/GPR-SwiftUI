@@ -11,7 +11,7 @@ import Charts
 struct RepoView: View {
     var router: (RepoRoutingLogic & RepoDataPassing)?
     var interactor: RepoBusinessLogic?
-    @ObservedObject var viewModel = RepoViewModel()
+    @StateObject var viewModel: RepoViewModel
 
     @State private var isChartTapped: Bool = false
     @State private var selectedDate: Date?
@@ -74,7 +74,7 @@ struct RepoView: View {
 
 struct RepoScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RepoView()
+        RepoView(viewModel: RepoViewModel())
     }
 }
 

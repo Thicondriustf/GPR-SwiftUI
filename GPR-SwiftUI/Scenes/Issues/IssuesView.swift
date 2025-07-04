@@ -10,7 +10,7 @@ import SwiftUI
 struct IssuesView: View {
     var router: (IssuesRoutingLogic & IssuesDataPassing)?
     var interactor: IssuesBusinessLogic?
-    @ObservedObject var viewModel = IssuesViewModel()
+    @StateObject var viewModel: IssuesViewModel
 
     var body: some View {
         ZStack {
@@ -30,6 +30,6 @@ struct IssuesView: View {
 
 struct IssuesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        IssuesView()
+        IssuesView(viewModel: IssuesViewModel())
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var router: (HomeRoutingLogic & HomeDataPassing)?
     var interactor: HomeBusinessLogic?
-    @ObservedObject var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
 
     var body: some View {
         NavigationStack {
@@ -45,6 +45,6 @@ struct HomeView: View {
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel())
     }
 }

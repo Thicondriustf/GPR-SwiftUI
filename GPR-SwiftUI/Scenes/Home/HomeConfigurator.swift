@@ -15,11 +15,12 @@ struct HomeConfigurator {
         let presenter = HomePresenter()
         let router = HomeRouter()
         router.dataStore = interactor
-        var view = HomeView()
+        let viewModel = HomeViewModel()
+        var view = HomeView(viewModel: viewModel)
         view.interactor = interactor
         view.router = router
         interactor.presenter = presenter
-        presenter.viewModel = view.viewModel
+        presenter.viewModel = viewModel
         return view
     }
 }
