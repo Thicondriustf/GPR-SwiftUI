@@ -22,17 +22,19 @@ class RepoViewModel: ObservableObject, RepoViewModelState {
     
     // MARK: State
     
+    @Published var isLoaded = false
     @Published var infos: String = ""
     @Published var issues: [Issue] = []
     @Published var errorMessage: String = ""
     @Published var showAlert: Bool = false
     
-    var weeks: [Date] {
-        return issues.map { $0.week }
+    var hasIssues: Bool {
+        return issues.contains(where: { $0.nbIssues > 0})
     }
     
     func displayInfos(_ infos: String) {
         self.infos = infos
+        isLoaded = true
     }
     
     func displayIssues(_ issues: [Issue]) {
@@ -42,5 +44,6 @@ class RepoViewModel: ObservableObject, RepoViewModelState {
     func displayError(message: String) {
         errorMessage = message
         showAlert = true
+        isLoaded = true
     }
 }
