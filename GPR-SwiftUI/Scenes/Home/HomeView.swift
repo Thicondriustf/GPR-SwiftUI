@@ -25,16 +25,22 @@ struct HomeView: View {
                                     .opacity(0)
                             }
                     }
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .frame(maxWidth: .infinity)
-                        .listRowInsets(.none)
-                        .listRowSeparator(.hidden)
-                        .onAppear(perform: interactor?.getNextPage)
+                    
+                    if !viewModel.isFullyLoaded {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .frame(maxWidth: .infinity)
+                            .listRowInsets(.none)
+                            .listRowSeparator(.hidden)
+                            .onAppear(perform: interactor?.getNextPage)
+                    }
+
                 }
             }
             .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert, actions: {
-                Button("OK", role: .cancel, action: {})
+                Button("OK", role: .cancel, action: {
+                    viewModel.showAlert = false
+                })
             })
             .listStyle(.plain)
             .navigationTitle("GitHub Public Repositories")

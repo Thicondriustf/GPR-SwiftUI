@@ -9,6 +9,7 @@ import NetworkingLayer
 
 protocol HomePresentationLogic {
     func presentRepositories(_ repositories: [Repository])
+    func presentIsFullyLoaded()
     func presentError(_ error: NetworkError)
 }
 
@@ -20,6 +21,10 @@ final class HomePresenter: HomePresentationLogic {
             return HomeViewModel.Repository(id: repository.id, title: repository.name, description: repository.description ?? "")
         }
         viewModel?.displayRepositories(repositories)
+    }
+    
+    func presentIsFullyLoaded() {
+        viewModel?.displayIsFullyLoaded()
     }
     
     func presentError(_ error: NetworkError) {

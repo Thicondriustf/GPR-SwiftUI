@@ -39,8 +39,12 @@ final class HomeInteractor: HomeBusinessLogic, HomeDataStore {
                     return
                 }
                 
-                repositories.append(contentsOf: result)
-                presenter?.presentRepositories(repositories)
+                if result.isEmpty {
+                    presenter?.presentIsFullyLoaded()
+                } else {
+                    repositories.append(contentsOf: result)
+                    presenter?.presentRepositories(repositories)
+                }
             case .failure(let error):
                 presenter?.presentError(error)
             }
