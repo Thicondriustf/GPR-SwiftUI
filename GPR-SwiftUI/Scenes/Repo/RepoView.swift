@@ -68,6 +68,7 @@ struct RepoView: View {
                                     }
                                 }
                             }
+                            .id("RepoChart")
                         }
                     }
                     .padding(10)
@@ -82,13 +83,14 @@ struct RepoView: View {
                         interactor?.getRepoInfos()
                         interactor?.getIssues(startDate: Date().addingTimeInterval(-7*4*24*3600))
                     }
+                    .id("RepoProgressView")
             }
         }
         .alert(viewModel.errorMessage, isPresented: $viewModel.showAlert, actions: {
             Button("OK", role: .cancel, action: {
                 viewModel.showAlert = false
             })
-
+            .id("RepoAlert")
         })
         .listStyle(.plain)
         .navigationTitle(router?.dataStore?.name ?? "")

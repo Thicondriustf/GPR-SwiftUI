@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D808DCED2E1830C900E33EF0 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D808DCEC2E1830C900E33EF0 /* HomeViewTests.swift */; };
+		D808DCEF2E1831C000E33EF0 /* RepoViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D808DCEE2E1831C000E33EF0 /* RepoViewTests.swift */; };
 		D8587B932D0FAFFF000BCCE2 /* GPR_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8587B922D0FAFFF000BCCE2 /* GPR_SwiftUIApp.swift */; };
 		D8587B9A2D0FB005000BCCE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8587B992D0FB005000BCCE2 /* Preview Assets.xcassets */; };
 		D8587BD52D0FB11F000BCCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8587BBD2D0FB11F000BCCE2 /* Assets.xcassets */; };
@@ -44,6 +46,7 @@
 		D8E00C102E18047B0004B6D7 /* FakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C0F2E18047B0004B6D7 /* FakeView.swift */; };
 		D8E00C122E1805570004B6D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C112E1805570004B6D7 /* SettingsView.swift */; };
 		D8E00C142E1805740004B6D7 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00C132E1805740004B6D7 /* SettingsRow.swift */; };
+		D8E00C172E1822DC0004B6D7 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = D8E00C162E1822DC0004B6D7 /* ViewInspector */; };
 		D8EBE1F62E16B88300CDAA27 /* NetworkingLayer in Frameworks */ = {isa = PBXBuildFile; productRef = D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D808DCEC2E1830C900E33EF0 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		D808DCEE2E1831C000E33EF0 /* RepoViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewTests.swift; sourceTree = "<group>"; };
 		D8587B8F2D0FAFFF000BCCE2 /* GPR-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPR-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8587B922D0FAFFF000BCCE2 /* GPR_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPR_SwiftUIApp.swift; sourceTree = "<group>"; };
 		D8587B992D0FB005000BCCE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E00C172E1822DC0004B6D7 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +178,8 @@
 				D8587BFF2D0FBF0D000BCCE2 /* HomeInteractorTests.swift */,
 				D87C065B2D10841B000E994B /* IssuesInteractorTests.swift */,
 				D87C065A2D10841B000E994B /* RepoInteractorTests.swift */,
+				D808DCEC2E1830C900E33EF0 /* HomeViewTests.swift */,
+				D808DCEE2E1831C000E33EF0 /* RepoViewTests.swift */,
 			);
 			path = "GPR-SwiftUITests";
 			sourceTree = "<group>";
@@ -358,6 +366,9 @@
 				D8587BA12D0FB006000BCCE2 /* PBXTargetDependency */,
 			);
 			name = "GPR-SwiftUITests";
+			packageProductDependencies = (
+				D8E00C162E1822DC0004B6D7 /* ViewInspector */,
+			);
 			productName = "GPR-SwiftUITests";
 			productReference = D8587B9F2D0FB006000BCCE2 /* GPR-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -390,6 +401,9 @@
 				Base,
 			);
 			mainGroup = D8587B862D0FAFFF000BCCE2;
+			packageReferences = (
+				D8E00C152E1822DC0004B6D7 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = D8587B902D0FAFFF000BCCE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +478,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87C065C2D10841B000E994B /* RepoInteractorTests.swift in Sources */,
+				D808DCEF2E1831C000E33EF0 /* RepoViewTests.swift in Sources */,
+				D808DCED2E1830C900E33EF0 /* HomeViewTests.swift in Sources */,
 				D87C065D2D10841B000E994B /* IssuesInteractorTests.swift in Sources */,
 				D8587C002D0FBF0D000BCCE2 /* HomeInteractorTests.swift in Sources */,
 			);
@@ -720,7 +736,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D8E00C152E1822DC0004B6D7 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				branch = 0.9.9;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		D8E00C162E1822DC0004B6D7 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8E00C152E1822DC0004B6D7 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
 		D8EBE1F52E16B88300CDAA27 /* NetworkingLayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkingLayer;

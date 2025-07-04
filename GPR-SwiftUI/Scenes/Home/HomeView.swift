@@ -41,6 +41,7 @@ struct HomeView: View {
                 Button("OK", role: .cancel, action: {
                     viewModel.showAlert = false
                 })
+                .id("HomeAlert")
             })
             .listStyle(.plain)
             .navigationTitle("GitHub Public Repositories")
